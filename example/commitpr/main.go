@@ -190,7 +190,6 @@ func createPR() (err error) {
 		HeadRepo:            repoBranch,
 		Base:                prBranch,
 		Body:                prDescription,
-		MaintainerCanModify: github.Bool(true),
 	}
 
 	pr, _, err := client.PullRequests.Create(ctx, *prRepoOwner, *prRepo, newPR)
