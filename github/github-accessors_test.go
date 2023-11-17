@@ -13996,16 +13996,6 @@ func TestNewPullRequest_GetIssue(tt *testing.T) {
 	n.GetIssue()
 }
 
-func TestNewPullRequest_GetMaintainerCanModify(tt *testing.T) {
-	var zeroValue bool
-	n := &NewPullRequest{MaintainerCanModify: &zeroValue}
-	n.GetMaintainerCanModify()
-	n = &NewPullRequest{}
-	n.GetMaintainerCanModify()
-	n = nil
-	n.GetMaintainerCanModify()
-}
-
 func TestNewPullRequest_GetTitle(tt *testing.T) {
 	var zeroValue string
 	n := &NewPullRequest{Title: &zeroValue}
@@ -18438,16 +18428,6 @@ func TestPullRequest_GetLocked(tt *testing.T) {
 	p.GetLocked()
 	p = nil
 	p.GetLocked()
-}
-
-func TestPullRequest_GetMaintainerCanModify(tt *testing.T) {
-	var zeroValue bool
-	p := &PullRequest{MaintainerCanModify: &zeroValue}
-	p.GetMaintainerCanModify()
-	p = &PullRequest{}
-	p.GetMaintainerCanModify()
-	p = nil
-	p.GetMaintainerCanModify()
 }
 
 func TestPullRequest_GetMergeable(tt *testing.T) {

@@ -880,11 +880,10 @@ func TestPullRequestUpdate_Marshal(t *testing.T) {
 	testJSONMarshal(t, &pullRequestUpdate{}, "{}")
 
 	u := &pullRequestUpdate{
-		Title:               String("title"),
-		Body:                String("body"),
-		State:               String("state"),
-		Base:                String("base"),
-		MaintainerCanModify: Bool(false),
+		Title: String("title"),
+		Body:  String("body"),
+		State: String("state"),
+		Base:  String("base"),
 	}
 
 	want := `{
@@ -892,7 +891,6 @@ func TestPullRequestUpdate_Marshal(t *testing.T) {
 		"body": "body",
 		"state": "state",
 		"base": "base",
-		"maintainer_can_modify": false
 	}`
 
 	testJSONMarshal(t, u, want)
@@ -932,14 +930,13 @@ func TestNewPullRequest_Marshal(t *testing.T) {
 	testJSONMarshal(t, &NewPullRequest{}, "{}")
 
 	u := &NewPullRequest{
-		Title:               String("eh"),
-		Head:                String("eh"),
-		HeadRepo:            String("eh"),
-		Base:                String("eh"),
-		Body:                String("eh"),
-		Issue:               Int(1),
-		MaintainerCanModify: Bool(false),
-		Draft:               Bool(false),
+		Title:    String("eh"),
+		Head:     String("eh"),
+		HeadRepo: String("eh"),
+		Base:     String("eh"),
+		Body:     String("eh"),
+		Issue:    Int(1),
+		Draft:    Bool(false),
 	}
 
 	want := `{
@@ -949,7 +946,6 @@ func TestNewPullRequest_Marshal(t *testing.T) {
 		"base": "eh",
 		"body": "eh",
 		"issue": 1,
-		"maintainer_can_modify": false,
 		"draft": false
 	}`
 
@@ -1269,10 +1265,9 @@ func TestPullRequest_Marshal(t *testing.T) {
 				SuspendedAt:     &Timestamp{referenceTime},
 			},
 		},
-		Milestone:           &Milestone{ID: Int64(1)},
-		MaintainerCanModify: Bool(true),
-		AuthorAssociation:   String("aa"),
-		NodeID:              String("nid"),
+		Milestone:         &Milestone{ID: Int64(1)},
+		AuthorAssociation: String("aa"),
+		NodeID:            String("nid"),
 		RequestedReviewers: []*User{
 			{
 				Login:           String("l"),
@@ -1481,7 +1476,6 @@ func TestPullRequest_Marshal(t *testing.T) {
 		"milestone": {
 			"id": 1
 		},
-		"maintainer_can_modify": true,
 		"author_association": "aa",
 		"node_id": "nid",
 		"requested_reviewers": [

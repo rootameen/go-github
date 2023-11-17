@@ -1,5 +1,9 @@
 # go-github #
 
+## About this fork ##
+
+This fork removes all mentiones of `MaintainerCanModify` and `maintainer_can_modify` fields from the library, which essentially blocks PRs under organization repos from being modified by people with `Admin` or `Maintain` privilege. This behavior has been confirmed as unexpected by Github Support, hence this fork was made.
+
 [![go-github release (latest SemVer)](https://img.shields.io/github/v/release/google/go-github?sort=semver)](https://github.com/google/go-github/releases)
 [![GoDoc](https://img.shields.io/static/v1?label=godoc&message=reference&color=blue)](https://pkg.go.dev/github.com/google/go-github/v56/github)
 [![Test Status](https://github.com/google/go-github/workflows/tests/badge.svg)](https://github.com/google/go-github/actions?query=workflow%3Atests)

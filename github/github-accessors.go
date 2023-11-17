@@ -11974,14 +11974,6 @@ func (n *NewPullRequest) GetIssue() int {
 	return *n.Issue
 }
 
-// GetMaintainerCanModify returns the MaintainerCanModify field if it's non-nil, zero value otherwise.
-func (n *NewPullRequest) GetMaintainerCanModify() bool {
-	if n == nil || n.MaintainerCanModify == nil {
-		return false
-	}
-	return *n.MaintainerCanModify
-}
-
 // GetTitle returns the Title field if it's non-nil, zero value otherwise.
 func (n *NewPullRequest) GetTitle() string {
 	if n == nil || n.Title == nil {
@@ -15868,14 +15860,6 @@ func (p *PullRequest) GetLocked() bool {
 		return false
 	}
 	return *p.Locked
-}
-
-// GetMaintainerCanModify returns the MaintainerCanModify field if it's non-nil, zero value otherwise.
-func (p *PullRequest) GetMaintainerCanModify() bool {
-	if p == nil || p.MaintainerCanModify == nil {
-		return false
-	}
-	return *p.MaintainerCanModify
 }
 
 // GetMergeable returns the Mergeable field if it's non-nil, zero value otherwise.
